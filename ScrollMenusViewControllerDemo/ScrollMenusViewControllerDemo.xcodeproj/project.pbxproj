@@ -12,6 +12,11 @@
 		8168852221B92E8F001564EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8168852021B92E8F001564EA /* Main.storyboard */; };
 		8168852421B92E91001564EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8168852321B92E91001564EA /* Assets.xcassets */; };
 		8168852721B92E91001564EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8168852521B92E91001564EA /* LaunchScreen.storyboard */; };
+		8168853021B93073001564EA /* ScrollMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168852F21B93073001564EA /* ScrollMenuViewController.swift */; };
+		8168853221B9308D001564EA /* MenusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168853121B9308D001564EA /* MenusView.swift */; };
+		8168853421B930F7001564EA /* SliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168853321B930F7001564EA /* SliderViewModel.swift */; };
+		81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F61321BA1F63008C5E76 /* CustomViewController.swift */; };
+		81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		8168852321B92E91001564EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8168852621B92E91001564EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8168852821B92E91001564EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8168852F21B93073001564EA /* ScrollMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollMenuViewController.swift; sourceTree = "<group>"; };
+		8168853121B9308D001564EA /* MenusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenusView.swift; sourceTree = "<group>"; };
+		8168853321B930F7001564EA /* SliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModel.swift; sourceTree = "<group>"; };
+		81E7F61321BA1F63008C5E76 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,8 @@
 				8168852E21B92EDB001564EA /* ScrollMenusVC */,
 				8168851C21B92E8F001564EA /* AppDelegate.swift */,
 				8168851E21B92E8F001564EA /* ViewController.swift */,
+				81E7F61321BA1F63008C5E76 /* CustomViewController.swift */,
+				81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */,
 				8168852021B92E8F001564EA /* Main.storyboard */,
 				8168852321B92E91001564EA /* Assets.xcassets */,
 				8168852521B92E91001564EA /* LaunchScreen.storyboard */,
@@ -68,6 +80,9 @@
 		8168852E21B92EDB001564EA /* ScrollMenusVC */ = {
 			isa = PBXGroup;
 			children = (
+				8168852F21B93073001564EA /* ScrollMenuViewController.swift */,
+				8168853121B9308D001564EA /* MenusView.swift */,
+				8168853321B930F7001564EA /* SliderViewModel.swift */,
 			);
 			path = ScrollMenusVC;
 			sourceTree = "<group>";
@@ -144,6 +159,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8168851F21B92E8F001564EA /* ViewController.swift in Sources */,
+				8168853221B9308D001564EA /* MenusView.swift in Sources */,
+				8168853421B930F7001564EA /* SliderViewModel.swift in Sources */,
+				81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */,
+				81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */,
+				8168853021B93073001564EA /* ScrollMenuViewController.swift in Sources */,
 				8168851D21B92E8F001564EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88KFCC4RQN;
 				INFOPLIST_FILE = ScrollMenusViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cddh.ScrollMenusViewControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -311,6 +332,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 88KFCC4RQN;
 				INFOPLIST_FILE = ScrollMenusViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cddh.ScrollMenusViewControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

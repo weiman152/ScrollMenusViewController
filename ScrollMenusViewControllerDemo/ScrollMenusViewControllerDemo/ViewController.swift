@@ -15,6 +15,15 @@ class ViewController: UIViewController {
         
     }
 
-
+    @IBAction func customVC(_ sender: Any) {
+        let vc = CustomViewController.instance()
+        present(vc, animated: true)
+    }
+    
+    @IBAction func scrollVC(_ sender: Any) {
+        let vc = ScrollViewController.instance()
+        present(vc, animated: true)
+    }
+    
 }
 
