@@ -17,6 +17,7 @@
 		8168853421B930F7001564EA /* SliderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168853321B930F7001564EA /* SliderViewModel.swift */; };
 		81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F61321BA1F63008C5E76 /* CustomViewController.swift */; };
 		81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */; };
+		81E7F61A21BA47A2008C5E76 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F61921BA47A2008C5E76 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8168853321B930F7001564EA /* SliderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewModel.swift; sourceTree = "<group>"; };
 		81E7F61321BA1F63008C5E76 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		81E7F61921BA47A2008C5E76 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				8168852F21B93073001564EA /* ScrollMenuViewController.swift */,
 				8168853121B9308D001564EA /* MenusView.swift */,
+				81E7F61921BA47A2008C5E76 /* Menu.swift */,
 				8168853321B930F7001564EA /* SliderViewModel.swift */,
 			);
 			path = ScrollMenusVC;
@@ -160,6 +163,7 @@
 			files = (
 				8168851F21B92E8F001564EA /* ViewController.swift in Sources */,
 				8168853221B9308D001564EA /* MenusView.swift in Sources */,
+				81E7F61A21BA47A2008C5E76 /* Menu.swift in Sources */,
 				8168853421B930F7001564EA /* SliderViewModel.swift in Sources */,
 				81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */,
 				81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */,
