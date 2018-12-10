@@ -20,9 +20,11 @@ class CustomViewController: UIViewController {
     
     private func setup() {
         let menus = ["关注的人", "谁关注我"]
-        let menuVC = ScrollMenuViewController.instance(menus: menus,
-                                                       superVC: self,
-                                                       frame: menuView.bounds)
+        let menuVC = ScrollMenuViewController.instance(
+            titleType: .text(titles: menus),
+            superVC: self,
+            frame: menuView.bounds
+        )
         menuView.addSubview(menuVC.view)
     }
 

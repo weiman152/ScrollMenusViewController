@@ -20,7 +20,7 @@ class ScrollViewController: UIViewController {
     
     private func setup() {
         let menus = ["推荐", "关注", "发现", "喜欢"]
-        scrollVC = ScrollMenuViewController.instance(menus: menus, superVC: self)
+        scrollVC = ScrollMenuViewController.instance(titleType: .text(titles: menus), superVC: self)
         view.insertSubview(scrollVC.view, at: 0)
     }
     

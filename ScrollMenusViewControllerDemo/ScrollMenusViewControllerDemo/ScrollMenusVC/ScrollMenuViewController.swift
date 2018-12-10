@@ -40,17 +40,20 @@ public struct MenuMode {
 
 public class ScrollMenuViewController: UIViewController {
 
+    // 默认平分屏幕
     private var type: ScrollMenuType = .splitTheScreen
+    // 默认纯文本
     private var titleType: ScrollMenuTitleType = .text(titles: [])
-    
+    // 顶部菜单view
     private var menuView = MenusView()
+    // 底部内容view
     private var collections: UICollectionView?
     /// 子VC的数组
     private var childVCs: [UIViewController] = []
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        
     }
     
     private func setup() {
@@ -64,13 +67,15 @@ public class ScrollMenuViewController: UIViewController {
         titleType: ScrollMenuTitleType,
         superVC: UIViewController,
         frame: CGRect = UIScreen.main.bounds,
-        type: ScrollMenuType = .splitTheScreen) -> ScrollMenuViewController {
+        type: ScrollMenuType = .splitTheScreen
+        ) -> ScrollMenuViewController {
         
         let vc = ScrollMenuViewController()
         vc.view.frame = frame
         vc.type = type
         vc.titleType = titleType
         superVC.addChildViewController(vc)
+        vc.setup()
         return vc
     }
 
@@ -84,7 +89,7 @@ extension ScrollMenuViewController {
                                 y: 0,
                                 width: view.bounds.size.width,
                                 height: 44)
-        
+        menuView.setup(type: type, titleType: titleType)
     }
     
     private func setupCollections() {

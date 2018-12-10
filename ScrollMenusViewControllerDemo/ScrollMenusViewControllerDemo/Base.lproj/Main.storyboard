@@ -115,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N4-83-akj">
-                                <rect key="frame" x="321" y="30" width="31" height="30"/>
+                                <rect key="frame" x="321" y="120" width="31" height="30"/>
                                 <state key="normal" title="关闭"/>
                                 <connections>
                                     <action selector="closeAction:" destination="ha6-nc-KZv" eventType="touchUpInside" id="346-sB-Usf"/>
@@ -124,7 +124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4N4-83-akj" firstAttribute="top" secondItem="K5K-rh-wUV" secondAttribute="top" constant="10" id="2pu-rN-Iis"/>
+                            <constraint firstItem="4N4-83-akj" firstAttribute="top" secondItem="K5K-rh-wUV" secondAttribute="top" constant="100" id="2pu-rN-Iis"/>
                             <constraint firstItem="K5K-rh-wUV" firstAttribute="trailing" secondItem="4N4-83-akj" secondAttribute="trailing" constant="23" id="oyl-HH-ZFP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K5K-rh-wUV"/>

@@ -22,16 +22,16 @@ class Menu: UIView {
     }( UIImageView() )
     
     // 默认左图右文
-    private var type: ScrollMenuTitleType = .leftImage
-    private var imageSize: CGSize = CGSize(width: 20, height: 20)
+    private var type: ScrollMenuTitleType = .text(titles: [])
+    private var imageSize: CGSize?
     private var font = UIFont.systemFont(ofSize: 16) {
         didSet {
             titleLabel.font = font
         }
     }
-    
+    private var index: Int = -1
     // 图片和文字之间的距离
-    private let spacing: CGFloat = 5
+    private var spacing: CGFloat = 5
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,52 +49,64 @@ class Menu: UIView {
         addSubview(contentView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(imageView)
-        
     }
     
     private func setupLayout() {
         
         let menuWidth = bounds.size.width
         let menuHeight = bounds.size.height
-        imageSize.height = imageSize.height < menuHeight ? imageSize.height : menuHeight
-        imageSize.width = imageSize.width < menuWidth ? imageSize.width : menuWidth
+        var imageWidth: CGFloat = 0
+        var imageHeight: CGFloat = 0
+        if let imageSize = imageSize {
+            imageHeight = imageSize.height < menuHeight ? imageSize.height : menuHeight
+            imageWidth = imageSize.width < menuWidth ? imageSize.width : menuWidth
+        } else {
+            spacing = 0
+        }
+       
         let titleSize = textSize(
             text: titleLabel.text ?? "",
             font: font,
-            maxSize: CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+            maxSize: CGSize(width: menuWidth, height: CGFloat(MAXFLOAT))
         )
         var titleWidth = titleSize.width
-        if titleWidth > (menuWidth - imageSize.width - spacing) {
-            titleWidth = menuWidth - imageSize.width - spacing
+        if titleWidth > (menuWidth - imageWidth - spacing) {
+            titleWidth = menuWidth - imageWidth - spacing
         }
-        let contentWidth = imageSize.width + spacing + titleWidth
+        let contentWidth = imageWidth + spacing + titleWidth
+        let centerY = (bounds.size.height - menuHeight) / 2.0
         
         switch type {
+        case .text: // 纯文本
+            imageView.removeFromSuperview()
+            titleLabel.frame = CGRect(x: 0,
+                                      y: centerY,
+                                      width: titleWidth,
+                                      height: menuHeight)
         case .leftImage: // 左图右文
             imageView.frame = CGRect(x: 0,
-                                     y: center.y,
-                                     width: imageSize.width,
-                                     height: imageSize.height)
-            titleLabel.frame = CGRect(x: imageSize.width + spacing,
-                                      y: center.y,
+                                     y: centerY,
+                                     width: imageWidth,
+                                     height: imageHeight)
+            titleLabel.frame = CGRect(x: imageWidth + spacing,
+                                      y: centerY,
                                       width: titleWidth,
                                       height: menuHeight)
         case .rightImage: // 左文右图
             titleLabel.frame = CGRect(x: 0,
-                                      y: center.y,
+                                      y: centerY,
                                       width: titleWidth,
                                       height: menuHeight)
             imageView.frame = CGRect(x: titleWidth + spacing,
-                                     y: center.y,
-                                     width: imageSize.width,
-                                     height: imageSize.height)
+                                     y: centerY,
+                                     width: imageWidth,
+                                     height: imageHeight)
         }
         
-        contentView.frame = CGRect(x: 0,
+        contentView.frame = CGRect(x: (bounds.size.width - contentWidth) / 2.0,
                                    y: 0,
                                    width: contentWidth,
                                    height: menuHeight)
-        contentView.center = center
     }
     
 }
@@ -121,9 +133,31 @@ extension Menu {
         setupLayout()
     }
     
+    func set(image: UIImage) {
+        imageView.image = image
+        setupLayout()
+    }
+    
     func set(imageSize: CGSize) {
         self.imageSize = imageSize
         setupLayout()
+    }
+    
+    func set(index: Int) {
+        self.index = index
+    }
+    
+    /// 对于自适应宽度的菜单，根据内容获取菜单宽度
+    ///
+    /// - Parameters:
+    /// - title: 菜单显示文字
+    /// - Returns: 菜单宽度
+    func getWidth(title: String,
+                  imageSize: CGSize = CGSize(width: 20, height: 20)) -> CGFloat {
+        let maxSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
+        let titleSize = textSize(text: title, font: font, maxSize: maxSize)
+        let width = titleSize.width + spacing + imageSize.width
+        return width
     }
 }
 
