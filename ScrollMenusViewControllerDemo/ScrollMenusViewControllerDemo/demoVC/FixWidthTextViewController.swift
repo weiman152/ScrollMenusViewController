@@ -18,7 +18,7 @@ class FixWidthTextViewController: UIViewController {
     
     private func setup() {
         let width = view.bounds.size.width / 3.0
-        let titles = ["西游记", "水浒传", "红楼梦", "悲惨世界", "巴黎圣母院", "红与黑"]
+        let titles = ["诗", "西游记", "离骚", "水浒传", "红楼梦", "悲惨世界", "巴黎圣母院", "红与黑"]
         let scrollVC = ScrollMenuViewController.instance(
             type: .fixWidth(width: width),
             titleType: .text(titles: titles),

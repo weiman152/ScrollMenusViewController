@@ -18,7 +18,7 @@ class AutoWidthTextViewController: UIViewController {
     
     private func setup() {
         
-        let titles = ["北京", "广西壮族自治区", "上海", "海南省", "内蒙古自治区", "琼", "深圳"]
+        let titles = ["北京", "广西壮族自治区", "上海", "海南省", "内蒙古自治区", "琼", "深圳", "湖南省", "湘", "宁夏回族自治区", "河南省", "西藏自治区", "武汉", "皖", "江苏省"]
         let scrollVC = ScrollMenuViewController.instance(
             type: .autoWidth,
             titleType: .text(titles: titles),

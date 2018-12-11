@@ -27,11 +27,8 @@ class MenusView: UIView {
     }
     
     private func setup() {
-        
         addSubview(scrollView)
-        
-        backgroundColor = .yellow
-        scrollView.backgroundColor = .red
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     private func setupLayout() {
@@ -159,6 +156,11 @@ extension MenusView {
         var tempWidth:CGFloat = 0
         for (i, model) in models.enumerated() {
             let menu = Menu(frame: .zero)
+            let width = menu.getWidth(title: model.title)
+            menu.frame = CGRect(x: tempWidth,
+                                y: 0,
+                                width: width,
+                                height: height)
             menu.set(title: model.title)
             menu.set(index: i)
             if let image = model.normalImage {
@@ -167,14 +169,9 @@ extension MenusView {
             if let image = model.selectedImage, i == currentIndex {
                 menu.set(image: image)
             }
-            let width = menu.getWidth(title: model.title)
-            tempWidth += width
-            menu.frame = CGRect(x: CGFloat(i) * width,
-                                y: 0,
-                                width: width,
-                                height: height)
             menus.append(menu)
             scrollView.addSubview(menu)
+            tempWidth += width
             menu.backgroundColor = UIColor.randomColor
         }
         scrollView.contentSize = CGSize(width: tempWidth,
