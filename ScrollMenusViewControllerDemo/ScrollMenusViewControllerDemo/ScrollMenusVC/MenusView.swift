@@ -10,20 +10,32 @@ import UIKit
 
 class MenusView: UIView {
     
-//    private var type: ScrollMenuType = .splitTheScreen
-//    private var titleType: ScrollMenuTitleType = .text(titles: [])
-//    private var titles: [MenuMode] = []
+    private var scrollView = UIScrollView()
     private var menus: [Menu] = []
     private var currentIndex = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        setup()
+        setupLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
+        setupLayout()
+    }
+    
+    private func setup() {
         
+        addSubview(scrollView)
+        
+        backgroundColor = .yellow
+        scrollView.backgroundColor = .red
+    }
+    
+    private func setupLayout() {
+        scrollView.frame = bounds
     }
 }
 
@@ -113,7 +125,7 @@ extension MenusView {
     private func addMenus(models: [MenuMode], width: CGFloat) {
         
         menus.removeAll()
-        subviews.forEach { $0.removeFromSuperview() }
+        scrollView.subviews.forEach { $0.removeFromSuperview() }
         let height = bounds.size.height
         
         for (i, model) in models.enumerated() {
@@ -132,16 +144,19 @@ extension MenusView {
                 menu.set(image: image)
             }
             menus.append(menu)
-            addSubview(menu)
+            scrollView.addSubview(menu)
             menu.backgroundColor = UIColor.randomColor
         }
+        scrollView.contentSize = CGSize(width: width * CGFloat(models.count),
+                                        height: height)
     }
     
     private func addMenus(models: [MenuMode]) {
         
         menus.removeAll()
-        subviews.forEach { $0.removeFromSuperview() }
+        scrollView.subviews.forEach { $0.removeFromSuperview() }
         let height = bounds.size.height
+        var tempWidth:CGFloat = 0
         for (i, model) in models.enumerated() {
             let menu = Menu(frame: .zero)
             menu.set(title: model.title)
@@ -153,13 +168,17 @@ extension MenusView {
                 menu.set(image: image)
             }
             let width = menu.getWidth(title: model.title)
+            tempWidth += width
             menu.frame = CGRect(x: CGFloat(i) * width,
                                 y: 0,
                                 width: width,
                                 height: height)
             menus.append(menu)
-            addSubview(menu)
+            scrollView.addSubview(menu)
+            menu.backgroundColor = UIColor.randomColor
         }
+        scrollView.contentSize = CGSize(width: tempWidth,
+                                        height: height)
     }
 }
 

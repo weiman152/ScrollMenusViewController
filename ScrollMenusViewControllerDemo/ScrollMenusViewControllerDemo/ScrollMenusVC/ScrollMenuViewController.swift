@@ -45,7 +45,7 @@ public class ScrollMenuViewController: UIViewController {
     // 默认纯文本
     private var titleType: ScrollMenuTitleType = .text(titles: [])
     // 顶部菜单view
-    private var menuView = MenusView()
+    private var menuView: MenusView!
     // 底部内容view
     private var collections: UICollectionView?
     /// 子VC的数组
@@ -53,7 +53,6 @@ public class ScrollMenuViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     private func setup() {
@@ -64,31 +63,30 @@ public class ScrollMenuViewController: UIViewController {
     
     /// 创建滑动VC
     open class func instance(
+        type: ScrollMenuType,
         titleType: ScrollMenuTitleType,
         superVC: UIViewController,
-        frame: CGRect = UIScreen.main.bounds,
-        type: ScrollMenuType = .splitTheScreen
+        frame: CGRect = UIScreen.main.bounds
         ) -> ScrollMenuViewController {
         
         let vc = ScrollMenuViewController()
-        vc.view.frame = frame
         vc.type = type
         vc.titleType = titleType
         superVC.addChildViewController(vc)
+        vc.view.frame = frame
         vc.setup()
         return vc
     }
-
 }
 
 extension ScrollMenuViewController {
     
     private func setupMenus() {
+        menuView = MenusView(frame: CGRect(x: 0,
+                                           y: 0,
+                                           width: view.bounds.size.width,
+                                           height: 44))
         view.addSubview(menuView)
-        menuView.frame = CGRect(x: 0,
-                                y: 0,
-                                width: view.bounds.size.width,
-                                height: 44)
         menuView.setup(type: type, titleType: titleType)
     }
     

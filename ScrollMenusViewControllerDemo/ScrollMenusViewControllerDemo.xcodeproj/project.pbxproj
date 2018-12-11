@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8157D29821BF9B99007C98ED /* WM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8157D29721BF9B99007C98ED /* WM.storyboard */; };
+		8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */; };
+		8157D29D21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */; };
+		8157D29F21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29E21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift */; };
+		8157D2A121BF9CBF007C98ED /* FixWidthTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2A021BF9CBF007C98ED /* FixWidthTextViewController.swift */; };
+		8157D2A321BF9CCD007C98ED /* FixWidthLeftImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2A221BF9CCD007C98ED /* FixWidthLeftImageViewController.swift */; };
+		8157D2A521BF9CDD007C98ED /* FixWidthRightImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2A421BF9CDD007C98ED /* FixWidthRightImageViewController.swift */; };
+		8157D2A721BF9D1F007C98ED /* AutoWidthTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2A621BF9D1F007C98ED /* AutoWidthTextViewController.swift */; };
+		8157D2A921BF9D31007C98ED /* AutoWidthLeftImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2A821BF9D31007C98ED /* AutoWidthLeftImageViewController.swift */; };
+		8157D2AB21BF9D47007C98ED /* AutoWidthRightImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D2AA21BF9D47007C98ED /* AutoWidthRightImageViewController.swift */; };
 		8168851D21B92E8F001564EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168851C21B92E8F001564EA /* AppDelegate.swift */; };
 		8168851F21B92E8F001564EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8168851E21B92E8F001564EA /* ViewController.swift */; };
 		8168852221B92E8F001564EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8168852021B92E8F001564EA /* Main.storyboard */; };
@@ -21,6 +31,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8157D29721BF9B99007C98ED /* WM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WM.storyboard; sourceTree = "<group>"; };
+		8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenTextViewController.swift; sourceTree = "<group>"; };
+		8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenLeftImageViewController.swift; sourceTree = "<group>"; };
+		8157D29E21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenRightImageViewController.swift; sourceTree = "<group>"; };
+		8157D2A021BF9CBF007C98ED /* FixWidthTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixWidthTextViewController.swift; sourceTree = "<group>"; };
+		8157D2A221BF9CCD007C98ED /* FixWidthLeftImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixWidthLeftImageViewController.swift; sourceTree = "<group>"; };
+		8157D2A421BF9CDD007C98ED /* FixWidthRightImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixWidthRightImageViewController.swift; sourceTree = "<group>"; };
+		8157D2A621BF9D1F007C98ED /* AutoWidthTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWidthTextViewController.swift; sourceTree = "<group>"; };
+		8157D2A821BF9D31007C98ED /* AutoWidthLeftImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWidthLeftImageViewController.swift; sourceTree = "<group>"; };
+		8157D2AA21BF9D47007C98ED /* AutoWidthRightImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoWidthRightImageViewController.swift; sourceTree = "<group>"; };
 		8168851921B92E8F001564EA /* ScrollMenusViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollMenusViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8168851C21B92E8F001564EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8168851E21B92E8F001564EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8157D29921BF9C37007C98ED /* demoVC */ = {
+			isa = PBXGroup;
+			children = (
+				8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */,
+				8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */,
+				8157D29E21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift */,
+				8157D2A021BF9CBF007C98ED /* FixWidthTextViewController.swift */,
+				8157D2A221BF9CCD007C98ED /* FixWidthLeftImageViewController.swift */,
+				8157D2A421BF9CDD007C98ED /* FixWidthRightImageViewController.swift */,
+				8157D2A621BF9D1F007C98ED /* AutoWidthTextViewController.swift */,
+				8157D2A821BF9D31007C98ED /* AutoWidthLeftImageViewController.swift */,
+				8157D2AA21BF9D47007C98ED /* AutoWidthRightImageViewController.swift */,
+			);
+			path = demoVC;
+			sourceTree = "<group>";
+		};
 		8168851021B92E8F001564EA = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +107,9 @@
 				8168851E21B92E8F001564EA /* ViewController.swift */,
 				81E7F61321BA1F63008C5E76 /* CustomViewController.swift */,
 				81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */,
+				8157D29921BF9C37007C98ED /* demoVC */,
 				8168852021B92E8F001564EA /* Main.storyboard */,
+				8157D29721BF9B99007C98ED /* WM.storyboard */,
 				8168852321B92E91001564EA /* Assets.xcassets */,
 				8168852521B92E91001564EA /* LaunchScreen.storyboard */,
 				8168852821B92E91001564EA /* Info.plist */,
@@ -148,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8157D29821BF9B99007C98ED /* WM.storyboard in Resources */,
 				8168852721B92E91001564EA /* LaunchScreen.storyboard in Resources */,
 				8168852421B92E91001564EA /* Assets.xcassets in Resources */,
 				8168852221B92E8F001564EA /* Main.storyboard in Resources */,
@@ -161,14 +200,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8157D2A121BF9CBF007C98ED /* FixWidthTextViewController.swift in Sources */,
 				8168851F21B92E8F001564EA /* ViewController.swift in Sources */,
 				8168853221B9308D001564EA /* MenusView.swift in Sources */,
+				8157D29D21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift in Sources */,
 				81E7F61A21BA47A2008C5E76 /* Menu.swift in Sources */,
+				8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */,
+				8157D2A521BF9CDD007C98ED /* FixWidthRightImageViewController.swift in Sources */,
+				8157D2A921BF9D31007C98ED /* AutoWidthLeftImageViewController.swift in Sources */,
 				8168853421B930F7001564EA /* SliderViewModel.swift in Sources */,
+				8157D29F21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift in Sources */,
+				8157D2A321BF9CCD007C98ED /* FixWidthLeftImageViewController.swift in Sources */,
+				8157D2A721BF9D1F007C98ED /* AutoWidthTextViewController.swift in Sources */,
 				81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */,
 				81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */,
 				8168853021B93073001564EA /* ScrollMenuViewController.swift in Sources */,
 				8168851D21B92E8F001564EA /* AppDelegate.swift in Sources */,
+				8157D2AB21BF9D47007C98ED /* AutoWidthRightImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,32 +19,141 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufs-YW-YmE">
-                                <rect key="frame" x="154.5" y="70" width="66" height="30"/>
-                                <state key="normal" title="自己的VC"/>
+                                <rect key="frame" x="148" y="70" width="79" height="30"/>
+                                <state key="normal" title="自定义View"/>
                                 <connections>
                                     <action selector="customVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z0d-ZF-Fpt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFa-At-zqq">
-                                <rect key="frame" x="134.5" y="120" width="106" height="30"/>
-                                <state key="normal" title="sdk中的VC类型"/>
+                                <rect key="frame" x="130" y="110" width="115" height="30"/>
+                                <state key="normal" title="作为childVC使用"/>
                                 <connections>
                                     <action selector="scrollVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UdN-Tx-hmW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvV-HH-XXL">
+                                <rect key="frame" x="100" y="160" width="75" height="30"/>
+                                <state key="normal" title="平分屏幕 &gt;"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3E-H3-q1V">
+                                <rect key="frame" x="92" y="275" width="75" height="30"/>
+                                <state key="normal" title="固定宽度 &gt;"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EO8-19-QjM">
+                                <rect key="frame" x="40" y="396" width="121" height="30"/>
+                                <state key="normal" title="根据文字自适应 &gt;"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXR-cx-sAU">
+                                <rect key="frame" x="169" y="190" width="37" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="纯文字"/>
+                                <connections>
+                                    <action selector="splitScreenTextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b14-Kg-JCe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSe-Ye-fH2">
+                                <rect key="frame" x="162.5" y="217" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左图右文"/>
+                                <connections>
+                                    <action selector="splitScreenLeftImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vZW-Uf-88h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-Q5-g4L">
+                                <rect key="frame" x="162.5" y="244" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左文右图"/>
+                                <connections>
+                                    <action selector="splitScreenRightImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CmV-uV-euh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNC-6v-l9v">
+                                <rect key="frame" x="169" y="305" width="37" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="纯文字"/>
+                                <connections>
+                                    <action selector="fixWidthText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cao-5h-bCJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-zm-njU">
+                                <rect key="frame" x="162.5" y="332" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左文右图"/>
+                                <connections>
+                                    <action selector="fixWidthRightImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvW-UU-Jij"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9p-K3-zh9">
+                                <rect key="frame" x="162.5" y="359" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左图右文"/>
+                                <connections>
+                                    <action selector="fixWidthLeftImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b88-WU-MAN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5b-Tu-MC9">
+                                <rect key="frame" x="162.5" y="453" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左文右图"/>
+                                <connections>
+                                    <action selector="autoRightImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFv-IP-AiG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qiq-rP-MnP">
+                                <rect key="frame" x="162.5" y="480" width="50" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="左图右文"/>
+                                <connections>
+                                    <action selector="autoLeftImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vnu-XI-3by"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-Mn-fHq">
+                                <rect key="frame" x="169" y="426" width="37" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="纯文字"/>
+                                <connections>
+                                    <action selector="autoText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bm3-24-HQ6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="rSe-Ye-fH2" firstAttribute="top" secondItem="zXR-cx-sAU" secondAttribute="bottom" id="1Ve-xd-ki7"/>
+                            <constraint firstItem="h5o-Mn-fHq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="32p-vH-YvA"/>
+                            <constraint firstItem="zXR-cx-sAU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9iY-ng-s72"/>
+                            <constraint firstItem="h5o-Mn-fHq" firstAttribute="top" secondItem="EO8-19-QjM" secondAttribute="bottom" id="C81-zR-KI6"/>
+                            <constraint firstItem="zXR-cx-sAU" firstAttribute="top" secondItem="lvV-HH-XXL" secondAttribute="bottom" id="E1m-Zs-L7H"/>
+                            <constraint firstItem="Qiq-rP-MnP" firstAttribute="top" secondItem="D5b-Tu-MC9" secondAttribute="bottom" id="Ihv-Qx-giR"/>
+                            <constraint firstItem="EO8-19-QjM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-87" id="K84-wc-kOI"/>
+                            <constraint firstItem="VNC-6v-l9v" firstAttribute="top" secondItem="Z3E-H3-q1V" secondAttribute="bottom" id="Pll-YN-ftW"/>
+                            <constraint firstItem="DMM-Q5-g4L" firstAttribute="top" secondItem="rSe-Ye-fH2" secondAttribute="bottom" id="QgS-B1-ZYa"/>
+                            <constraint firstItem="VNC-6v-l9v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RhW-cN-w55"/>
                             <constraint firstItem="tFa-At-zqq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="U9o-JF-k9q"/>
+                            <constraint firstItem="DMM-Q5-g4L" firstAttribute="centerX" secondItem="zXR-cx-sAU" secondAttribute="centerX" id="UaR-dn-MPX"/>
                             <constraint firstItem="ufs-YW-YmE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZEi-8D-HmO"/>
+                            <constraint firstItem="d8C-zm-njU" firstAttribute="centerX" secondItem="VNC-6v-l9v" secondAttribute="centerX" id="b4m-7w-sGq"/>
+                            <constraint firstItem="Z3E-H3-q1V" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-58" id="c4H-7E-fjo"/>
                             <constraint firstItem="ufs-YW-YmE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="d3c-1q-Mnb"/>
-                            <constraint firstItem="tFa-At-zqq" firstAttribute="top" secondItem="ufs-YW-YmE" secondAttribute="bottom" constant="20" id="xmc-1C-aJQ"/>
+                            <constraint firstItem="f9p-K3-zh9" firstAttribute="centerX" secondItem="VNC-6v-l9v" secondAttribute="centerX" id="fK0-Qj-OrI"/>
+                            <constraint firstItem="EO8-19-QjM" firstAttribute="top" secondItem="f9p-K3-zh9" secondAttribute="bottom" constant="10" id="g3Z-nZ-mIB"/>
+                            <constraint firstItem="D5b-Tu-MC9" firstAttribute="centerX" secondItem="h5o-Mn-fHq" secondAttribute="centerX" id="jMu-rI-h7j"/>
+                            <constraint firstItem="d8C-zm-njU" firstAttribute="top" secondItem="VNC-6v-l9v" secondAttribute="bottom" id="kft-vW-6TF"/>
+                            <constraint firstItem="Z3E-H3-q1V" firstAttribute="top" secondItem="DMM-Q5-g4L" secondAttribute="bottom" constant="4" id="lVh-TM-Ixo"/>
+                            <constraint firstItem="lvV-HH-XXL" firstAttribute="top" secondItem="tFa-At-zqq" secondAttribute="bottom" constant="20" id="mCg-tl-5xb"/>
+                            <constraint firstItem="D5b-Tu-MC9" firstAttribute="top" secondItem="h5o-Mn-fHq" secondAttribute="bottom" id="mZv-n2-db9"/>
+                            <constraint firstItem="Qiq-rP-MnP" firstAttribute="centerX" secondItem="h5o-Mn-fHq" secondAttribute="centerX" id="mn1-vw-HI9"/>
+                            <constraint firstItem="lvV-HH-XXL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-50" id="syu-eY-TqW"/>
+                            <constraint firstItem="rSe-Ye-fH2" firstAttribute="centerX" secondItem="zXR-cx-sAU" secondAttribute="centerX" id="x7d-bf-Js7"/>
+                            <constraint firstItem="tFa-At-zqq" firstAttribute="top" secondItem="ufs-YW-YmE" secondAttribute="bottom" constant="10" id="xmc-1C-aJQ"/>
+                            <constraint firstItem="f9p-K3-zh9" firstAttribute="top" secondItem="d8C-zm-njU" secondAttribute="bottom" id="zYt-lq-9xm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="26.53673163418291"/>
         </scene>
         <!--Custom View Controller-->
         <scene sceneID="LrO-BQ-hdh">

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Split Screen Text View Controller-->
+        <scene sceneID="rrp-nG-i07">
+            <objects>
+                <viewController storyboardIdentifier="SplitScreenTextViewController" id="Sdd-62-y4h" customClass="SplitScreenTextViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="imh-vi-v4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平分屏幕：纯文本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrk-cL-dgy">
+                                <rect key="frame" x="118" y="40" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mrk-cL-dgy" firstAttribute="top" secondItem="7oY-Mf-2an" secondAttribute="top" constant="20" id="pjI-TJ-u9S"/>
+                            <constraint firstItem="Mrk-cL-dgy" firstAttribute="centerX" secondItem="7oY-Mf-2an" secondAttribute="centerX" id="zDY-BR-NfU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7oY-Mf-2an"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMA-dK-6uq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="-7"/>
+        </scene>
+        <!--Split Screen Left Image View Controller-->
+        <scene sceneID="jDo-rc-4Fb">
+            <objects>
+                <viewController storyboardIdentifier="SplitScreenLeftImageViewController" id="rX3-8W-UFL" customClass="SplitScreenLeftImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITr-2X-YKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平分屏幕：左图右文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37v-SB-gOI">
+                                <rect key="frame" x="109.5" y="40" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="37v-SB-gOI" firstAttribute="centerX" secondItem="uuh-NZ-QJe" secondAttribute="centerX" id="hOQ-Gl-Szg"/>
+                            <constraint firstItem="37v-SB-gOI" firstAttribute="top" secondItem="uuh-NZ-QJe" secondAttribute="top" constant="20" id="maL-20-kgA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uuh-NZ-QJe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AAK-t6-YFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="-8"/>
+        </scene>
+        <!--Split Screen Right Image View Controller-->
+        <scene sceneID="a12-NZ-tvX">
+            <objects>
+                <viewController storyboardIdentifier="SplitScreenRightImageViewController" id="udY-XL-6X9" customClass="SplitScreenRightImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h3I-Aa-0TQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="平分屏幕：左文右图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRL-KK-kPw">
+                                <rect key="frame" x="109.5" y="40" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VRL-KK-kPw" firstAttribute="top" secondItem="JkC-FW-8oJ" secondAttribute="top" constant="20" id="7rK-CL-bpl"/>
+                            <constraint firstItem="VRL-KK-kPw" firstAttribute="centerX" secondItem="JkC-FW-8oJ" secondAttribute="centerX" id="adZ-CR-qD0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JkC-FW-8oJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43T-Q2-5dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="-9"/>
+        </scene>
+        <!--Fix Width Text View Controller-->
+        <scene sceneID="fgI-fj-jQG">
+            <objects>
+                <viewController storyboardIdentifier="FixWidthTextViewController" id="Rdf-X7-5OK" customClass="FixWidthTextViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JL3-FT-xNq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定宽度：纯文本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpV-iH-xOe">
+                                <rect key="frame" x="118" y="40" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dpV-iH-xOe" firstAttribute="top" secondItem="vyH-4C-PGL" secondAttribute="top" constant="20" id="1CE-53-o0P"/>
+                            <constraint firstItem="dpV-iH-xOe" firstAttribute="centerX" secondItem="vyH-4C-PGL" secondAttribute="centerX" id="eT3-3j-uoU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vyH-4C-PGL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mf-ov-A7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="692"/>
+        </scene>
+        <!--Auto Width Text View Controller-->
+        <scene sceneID="kDs-KM-KL8">
+            <objects>
+                <viewController storyboardIdentifier="AutoWidthTextViewController" id="T9d-ol-kdR" customClass="AutoWidthTextViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qDh-h3-pDd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自适应宽度：纯文本" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZf-wz-Qh6">
+                                <rect key="frame" x="109.5" y="40" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oZf-wz-Qh6" firstAttribute="top" secondItem="2G5-Jz-G3R" secondAttribute="top" constant="20" id="JkE-T7-Zcj"/>
+                            <constraint firstItem="oZf-wz-Qh6" firstAttribute="centerX" secondItem="2G5-Jz-G3R" secondAttribute="centerX" id="wkV-6K-qru"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2G5-Jz-G3R"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vp-xR-VqG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250" y="1399"/>
+        </scene>
+        <!--Fix Width Left Image View Controller-->
+        <scene sceneID="dOa-iU-R5g">
+            <objects>
+                <viewController storyboardIdentifier="FixWidthLeftImageViewController" id="7Fo-rw-Otp" customClass="FixWidthLeftImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYJ-GR-O3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定宽度：左图右文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHH-mE-oig">
+                                <rect key="frame" x="109.5" y="40" width="156" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XHH-mE-oig" firstAttribute="top" secondItem="uIu-Ud-zc4" secondAttribute="top" constant="20" id="kZ1-6M-TtY"/>
+                            <constraint firstItem="XHH-mE-oig" firstAttribute="centerX" secondItem="uIu-Ud-zc4" secondAttribute="centerX" id="r8g-pN-SA7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uIu-Ud-zc4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P8q-Hk-BEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445.60000000000002" y="690.40479760119945"/>
+        </scene>
+        <!--Fix Width Right Image View Controller-->
+        <scene sceneID="GV4-R9-j0F">
+            <objects>
+                <viewController storyboardIdentifier="FixWidthRightImageViewController" id="bEy-yS-E1h" customClass="FixWidthRightImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YXf-cQ-sQH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定宽度：左文右图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0p-n9-H3O">
+                                <rect key="frame" x="109.5" y="40" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y0p-n9-H3O" firstAttribute="top" secondItem="lF0-Nf-W6U" secondAttribute="top" constant="20" id="Fxz-zh-mfj"/>
+                            <constraint firstItem="y0p-n9-H3O" firstAttribute="centerX" secondItem="lF0-Nf-W6U" secondAttribute="centerX" id="gnY-FJ-c3x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lF0-Nf-W6U"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mge-NJ-Cmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="691"/>
+        </scene>
+        <!--Auto Width Left Image View Controller-->
+        <scene sceneID="EG7-ZU-4dl">
+            <objects>
+                <viewController storyboardIdentifier="AutoWidthLeftImageViewController" id="yz2-WA-feD" customClass="AutoWidthLeftImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e32-GX-AyT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自适应宽度：左图右文" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PA9-KU-QAH">
+                                <rect key="frame" x="101" y="40" width="173.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PA9-KU-QAH" firstAttribute="top" secondItem="pNY-Qq-Y6u" secondAttribute="top" constant="20" id="8I4-Jk-5kx"/>
+                            <constraint firstItem="PA9-KU-QAH" firstAttribute="centerX" secondItem="pNY-Qq-Y6u" secondAttribute="centerX" id="9bB-Uy-Gu6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pNY-Qq-Y6u"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbc-gi-Zma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="1398"/>
+        </scene>
+        <!--Auto Width Right Image View Controller-->
+        <scene sceneID="zcO-qd-PMe">
+            <objects>
+                <viewController storyboardIdentifier="AutoWidthRightImageViewController" id="XXG-oy-0ZS" customClass="AutoWidthRightImageViewController" customModule="ScrollMenusViewControllerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Wh-f9-XbO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自适应宽度：左文右图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-Hs-hq8">
+                                <rect key="frame" x="101" y="40" width="173.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XIA-Hs-hq8" firstAttribute="top" secondItem="vl1-NJ-Q9l" secondAttribute="top" constant="20" id="gw3-RK-ecw"/>
+                            <constraint firstItem="XIA-Hs-hq8" firstAttribute="centerX" secondItem="vl1-NJ-Q9l" secondAttribute="centerX" id="qDA-kP-A3L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vl1-NJ-Q9l"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Vp-aR-lAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="1398"/>
+        </scene>
+    </scenes>
+</document>
