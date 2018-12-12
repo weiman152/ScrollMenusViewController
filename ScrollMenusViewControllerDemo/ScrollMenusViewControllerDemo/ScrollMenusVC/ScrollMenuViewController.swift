@@ -107,6 +107,7 @@ extension ScrollMenuViewController {
                                        collectionViewLayout: flowLayout)
         view.addSubview(collections!)
         collections?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        sliderViewModel.delegate = self
         switch titleType {
         case .text(let titles):
             sliderViewModel.set(collectionView: collections!, count: titles.count)
@@ -115,7 +116,25 @@ extension ScrollMenuViewController {
         case .rightImage(let menus):
             sliderViewModel.set(collectionView: collections!, count: menus.count)
         }
-        sliderViewModel.delegate = self
+    }
+    
+    private func fixWidthScroll(width: CGFloat, offsetX: CGFloat) {
+        //1. 获取屏幕中间的位置
+        let centerX = menuView.center.x
+        let fixIndex = centerX / width
+        guard let collection = collections else {
+            return
+        }
+        
+        let index = offsetX / collection.bounds.size.width
+        
+        if (index > fixIndex)&&((childVCs.count - Int(index)) > Int(fixIndex)) {
+            menuView.scrollTo(index: Int(index))
+        }
+    }
+    
+    private func autoWidthScroll(offsetX: CGFloat) {
+        
     }
    
 }
@@ -129,6 +148,16 @@ extension ScrollMenuViewController: SliderViewModelDelegate {
     
     func menuDidScroll(to index: Int) {
         menuView.menuClick(index: index)
+    }
+    
+    func menuDidScroll(offSetX: CGFloat) {
+        switch type {
+        case .splitTheScreen: break
+        case .fixWidth(let width):
+            fixWidthScroll(width: width, offsetX: offSetX)
+        case .autoWidth:
+            autoWidthScroll(offsetX: offSetX)
+        }
     }
 }
 

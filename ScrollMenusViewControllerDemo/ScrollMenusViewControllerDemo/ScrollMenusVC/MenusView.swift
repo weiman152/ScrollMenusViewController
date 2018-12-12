@@ -201,6 +201,20 @@ extension MenusView: MenuDelegate {
         }
         delegate?.menuClick(index: index)
     }
+    
+    func scrollTo(index: Int) {
+        guard index < menus.count else {
+            return
+        }
+        let menu = menus[index]
+        let menuX = menu.frame.origin.x + menu.frame.size.width / 2.0
+        let dis = menuX - center.x
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            self?.scrollView.contentOffset = CGPoint(x: dis, y: 0)
+            self?.layoutIfNeeded()
+        }
+        
+    }
 }
 
 extension UIColor {

@@ -13,6 +13,8 @@ protocol SliderViewModelDelegate: NSObjectProtocol {
     func addChildVC(vc: UIViewController)
     /// 滑动到index
     func menuDidScroll(to index: Int)
+    /// 滑动的偏移量
+    func menuDidScroll(offSetX: CGFloat)
 }
 
 class SliderViewModel: NSObject {
@@ -82,7 +84,7 @@ extension SliderViewModel: UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        delegate?.menuDidScroll(offSetX: scrollView.contentOffset.x)
     }
 }
 
