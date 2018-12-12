@@ -114,6 +114,15 @@ extension ScrollMenuViewController {
         case .rightImage(let menus):
             sliderViewModel.set(collectionView: collections!, count: menus.count)
         }
+        sliderViewModel.delegate = self
     }
    
+}
+
+extension ScrollMenuViewController: SliderViewModelDelegate {
+    
+    func addChildVC(vc: UIViewController) {
+        childVCs.append(vc)
+        addChildViewController(vc)
+    }
 }
