@@ -48,6 +48,7 @@ public class ScrollMenuViewController: UIViewController {
     private var menuView: MenusView!
     // 底部内容view
     private var collections: UICollectionView?
+    private var sliderViewModel = SliderViewModel()
     /// 子VC的数组
     private var childVCs: [UIViewController] = []
     
@@ -56,7 +57,7 @@ public class ScrollMenuViewController: UIViewController {
     }
     
     private func setup() {
-        view.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         setupMenus()
         setupCollections()
     }
@@ -91,10 +92,28 @@ extension ScrollMenuViewController {
     }
     
     private func setupCollections() {
+        let height = view.bounds.size.height - menuView.frame.size.height
         let flowLayout = UICollectionViewFlowLayout()
-        collections = UICollectionView(frame: .zero,
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: view.bounds.size.width,
+                                     height: height)
+        flowLayout.minimumLineSpacing = 0
+        let frame = CGRect(x: 0,
+                           y: menuView.frame.size.height,
+                           width: view.bounds.size.width,
+                           height: height)
+        collections = UICollectionView(frame: frame,
                                        collectionViewLayout: flowLayout)
         view.addSubview(collections!)
+        collections?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        switch titleType {
+        case .text(let titles):
+            sliderViewModel.set(collectionView: collections!, count: titles.count)
+        case .leftImage(let menus):
+            sliderViewModel.set(collectionView: collections!, count: menus.count)
+        case .rightImage(let menus):
+            sliderViewModel.set(collectionView: collections!, count: menus.count)
+        }
     }
    
 }
