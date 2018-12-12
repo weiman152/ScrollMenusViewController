@@ -11,6 +11,8 @@ import UIKit
 protocol SliderViewModelDelegate: NSObjectProtocol {
     /// 添加新的VC
     func addChildVC(vc: UIViewController)
+    /// 滑动到index
+    func menuDidScroll(to index: Int)
 }
 
 class SliderViewModel: NSObject {
@@ -68,8 +70,20 @@ extension SliderViewModel: UICollectionViewDataSource {
     }
 }
 
-extension SliderViewModel: UICollectionViewDelegate {
+extension SliderViewModel: UICollectionViewDelegate { }
+
+extension SliderViewModel: UIScrollViewDelegate {
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let offsetX = scrollView.contentOffset.x
+        let index = Int(offsetX / scrollView.bounds.size.width)
+        delegate?.menuDidScroll(to: index)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
 }
 
 

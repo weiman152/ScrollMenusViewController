@@ -126,6 +126,10 @@ extension ScrollMenuViewController: SliderViewModelDelegate {
         childVCs.append(vc)
         addChildViewController(vc)
     }
+    
+    func menuDidScroll(to index: Int) {
+        menuView.menuClick(index: index)
+    }
 }
 
 extension ScrollMenuViewController: MenusViewDelegate {
