@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol MenuDelegate: NSObjectProtocol {
+    /// 按钮点击
+    func menuClick(index: Int)
+}
+
 class Menu: UIView {
 
+    weak var delegate:MenuDelegate?
+    var index: Int = 0
+    
     private lazy var contentView = UIView()
     private lazy var titleLabel: UILabel = {
         $0.text = ""
@@ -29,7 +37,6 @@ class Menu: UIView {
             titleLabel.font = font
         }
     }
-    private var index: Int = -1
     // 图片和文字之间的距离
     private var spacing: CGFloat = 5
     
@@ -49,6 +56,10 @@ class Menu: UIView {
         addSubview(contentView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(imageView)
+        
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(menuClick))
+        addGestureRecognizer(tap)
     }
     
     private func setupLayout() {
@@ -108,7 +119,6 @@ class Menu: UIView {
                                    width: contentWidth,
                                    height: menuHeight)
     }
-    
 }
 
 // MARK: - public
@@ -143,10 +153,6 @@ extension Menu {
         setupLayout()
     }
     
-    func set(index: Int) {
-        self.index = index
-    }
-    
     /// 对于自适应宽度的菜单，根据内容获取菜单宽度
     ///
     /// - Parameters:
@@ -171,5 +177,9 @@ extension Menu {
                                  options: [.usesLineFragmentOrigin],
                                  attributes: [NSAttributedStringKey.font : font],
                                  context: nil).size
+    }
+    
+    @objc private func menuClick() {
+        delegate?.menuClick(index: index)
     }
 }

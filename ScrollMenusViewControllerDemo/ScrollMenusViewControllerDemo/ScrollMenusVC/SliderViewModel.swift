@@ -40,6 +40,17 @@ class SliderViewModel: NSObject {
     }
 }
 
+extension SliderViewModel {
+   
+    /// 滑动到某个index
+    func scrollTo(index: Int) {
+        let indexP = IndexPath(item: index, section: 0)
+        collectionView?.scrollToItem(at: indexP,
+                                     at: .centeredHorizontally,
+                                     animated: false)
+    }
+}
+
 extension SliderViewModel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

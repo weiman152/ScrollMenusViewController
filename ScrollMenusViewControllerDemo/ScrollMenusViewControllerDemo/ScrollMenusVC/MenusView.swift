@@ -8,7 +8,16 @@
 
 import UIKit
 
+protocol MenusViewDelegate: NSObjectProtocol {
+    func menuClick(index: Int)
+}
+
 class MenusView: UIView {
+    
+    public var normalColor: UIColor = #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
+    public var selectColor: UIColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+    
+    internal var delegate: MenusViewDelegate?
     
     private var scrollView = UIScrollView()
     private var menus: [Menu] = []
@@ -132,8 +141,8 @@ extension MenusView {
                 width: width,
                 height: height)
             )
+            menu.index = i
             menu.set(title: model.title)
-            menu.set(index: i)
             if let image = model.normalImage {
                 menu.set(image: image)
             }
@@ -141,6 +150,8 @@ extension MenusView {
                 menu.set(image: image)
             }
             menus.append(menu)
+            menu.delegate = self
+            menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
             menu.backgroundColor = UIColor.randomColor
         }
@@ -156,13 +167,13 @@ extension MenusView {
         var tempWidth:CGFloat = 0
         for (i, model) in models.enumerated() {
             let menu = Menu(frame: .zero)
+            menu.index = i
             let width = menu.getWidth(title: model.title)
             menu.frame = CGRect(x: tempWidth,
                                 y: 0,
                                 width: width,
                                 height: height)
             menu.set(title: model.title)
-            menu.set(index: i)
             if let image = model.normalImage {
                 menu.set(image: image)
             }
@@ -170,12 +181,25 @@ extension MenusView {
                 menu.set(image: image)
             }
             menus.append(menu)
+            menu.delegate = self
+            menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
             tempWidth += width
             menu.backgroundColor = UIColor.randomColor
         }
         scrollView.contentSize = CGSize(width: tempWidth,
                                         height: height)
+    }
+}
+
+extension MenusView: MenuDelegate {
+    
+    func menuClick(index: Int) {
+        
+        for menu in menus {
+            menu.set(color: menu.index == index ? selectColor : normalColor)
+        }
+        delegate?.menuClick(index: index)
     }
 }
 

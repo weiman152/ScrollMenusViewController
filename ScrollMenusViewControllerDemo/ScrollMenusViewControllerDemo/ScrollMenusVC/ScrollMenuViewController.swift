@@ -89,6 +89,7 @@ extension ScrollMenuViewController {
                                            height: 44))
         view.addSubview(menuView)
         menuView.setup(type: type, titleType: titleType)
+        menuView.delegate = self
     }
     
     private func setupCollections() {
@@ -124,5 +125,12 @@ extension ScrollMenuViewController: SliderViewModelDelegate {
     func addChildVC(vc: UIViewController) {
         childVCs.append(vc)
         addChildViewController(vc)
+    }
+}
+
+extension ScrollMenuViewController: MenusViewDelegate {
+    /// 按钮点击，同步滑动内容
+    func menuClick(index: Int) {
+        sliderViewModel.scrollTo(index: index)
     }
 }
