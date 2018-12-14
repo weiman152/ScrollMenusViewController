@@ -8,6 +8,17 @@
 
 import UIKit
 
+public protocol ScrollMenuViewControllerDelegate: NSObjectProtocol {
+
+    /// 菜单改变
+    func menuDidChange(index: Int, viewController: UIViewController)
+}
+
+public protocol ScrollMenuViewControllerDataSource: NSObjectProtocol {
+    /// 给菜单填充数据
+    func menu(viewController: UIViewController, index: Int)
+}
+
 public enum ScrollMenuType {
     case splitTheScreen             // 平分屏幕
     case fixWidth(width: CGFloat)   // 固定宽度
@@ -39,6 +50,9 @@ public struct MenuMode {
 }
 
 public class ScrollMenuViewController: UIViewController {
+    
+    public weak var delegate: ScrollMenuViewControllerDelegate?
+    public weak var dataSource: ScrollMenuViewControllerDataSource?
 
     // 默认平分屏幕
     private var type: ScrollMenuType = .splitTheScreen
@@ -108,6 +122,7 @@ extension ScrollMenuViewController {
         view.addSubview(collections!)
         collections?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         sliderViewModel.delegate = self
+        sliderViewModel.dataSource = self
         switch titleType {
         case .text(let titles):
             sliderViewModel.set(collectionView: collections!, count: titles.count)
@@ -179,6 +194,13 @@ extension ScrollMenuViewController: SliderViewModelDelegate {
         case .autoWidth:
             autoWidthScroll(offsetX: offSetX)
         }
+    }
+}
+
+extension ScrollMenuViewController: SliderViewModelDataSource {
+    
+    func menu(viewController: UIViewController, index: Int) {
+        dataSource?.menu(viewController: viewController, index: index)
     }
 }
 

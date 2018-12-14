@@ -25,6 +25,7 @@ class ScrollViewController: UIViewController {
             titleType: .text(titles: menus),
             superVC: self)
         view.insertSubview(scrollVC.view, at: 0)
+        scrollVC.dataSource = self
     }
     
     static func instance() -> ScrollViewController {
@@ -35,5 +36,16 @@ class ScrollViewController: UIViewController {
     
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true)
+    }
+}
+
+extension ScrollViewController: ScrollMenuViewControllerDataSource {
+    
+    func menu(viewController: UIViewController, index: Int) {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        viewController.view.addSubview(label)
+        label.center = viewController.view.center
+        label.text = "哈哈哈哈哈 \(index)"
+        label.backgroundColor = UIColor.yellow
     }
 }

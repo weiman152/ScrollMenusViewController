@@ -17,9 +17,14 @@ protocol SliderViewModelDelegate: NSObjectProtocol {
     func menuDidScroll(offSetX: CGFloat)
 }
 
+protocol SliderViewModelDataSource: NSObjectProtocol {
+    func menu(viewController: UIViewController, index: Int)
+}
+
 class SliderViewModel: NSObject {
     
     weak var delegate: SliderViewModelDelegate?
+    weak var dataSource: SliderViewModelDataSource?
     
     private var collectionView: UICollectionView?
     private var count = 0
@@ -64,6 +69,7 @@ extension SliderViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BlankCell", for: indexPath)
         let vc = childVCs[indexPath.row]
+        dataSource?.menu(viewController: vc, index: indexPath.row)
         if !cell.subviews.contains(vc.view) {
             cell.addSubview(vc.view)
             vc.view.frame = cell.bounds
