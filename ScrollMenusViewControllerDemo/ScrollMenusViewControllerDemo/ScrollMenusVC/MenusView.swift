@@ -213,7 +213,21 @@ extension MenusView: MenuDelegate {
             self?.scrollView.contentOffset = CGPoint(x: dis, y: 0)
             self?.layoutIfNeeded()
         }
-        
+    }
+    
+    func scrollToLeft() {
+        scrollView.contentOffset = CGPoint.zero
+    }
+    
+    func scrollToRight() {
+        scrollView.contentOffset = CGPoint(
+            x: scrollView.contentSize.width - scrollView.bounds.size.width,
+            y: 0
+        )
+    }
+    
+    func getContentSize() -> CGSize {
+        return scrollView.contentSize
     }
 }
 
