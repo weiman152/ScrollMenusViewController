@@ -27,6 +27,7 @@ class SplitScreenTextViewController: UIViewController {
                           height: view.bounds.size.height - 84)
         )
         view.addSubview(scrollMenuVC.view)
+        scrollMenuVC.dataSource = self
     }
     
     static func instance() -> SplitScreenTextViewController {
@@ -39,5 +40,26 @@ class SplitScreenTextViewController: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+extension SplitScreenTextViewController: ScrollMenuViewControllerDataSource {
+    
+    func menu(viewController: UIViewController, index: Int) {
+        
+        var vc = UIViewController()
+        switch index % 3 {
+        case 0:
+            vc = ChildListViewController.instance(index: index)
+        case 1:
+            vc = ChildImageViewController.instance(index: index)
+        case 2:
+            vc = ChildTextViewController.instance(index: index)
+        default: break
+        }
+        
+        viewController.addChildViewController(vc)
+        viewController.view.addSubview(vc.view)
+        vc.view.frame = viewController.view.bounds
+    }
 }
 

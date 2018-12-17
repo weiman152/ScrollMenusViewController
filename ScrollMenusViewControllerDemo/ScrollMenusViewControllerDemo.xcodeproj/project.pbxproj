@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		811B61D421C7470D00728826 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61D321C7470C00728826 /* ListView.swift */; };
 		811B61D621C7833900728826 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61D521C7833900728826 /* CustomImageView.swift */; };
+		811B61D921C7C4E500728826 /* ChildListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61D821C7C4E500728826 /* ChildListViewController.swift */; };
+		811B61DB21C7CDC400728826 /* ChildVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811B61DA21C7CDC400728826 /* ChildVC.storyboard */; };
+		811B61DD21C7D1AB00728826 /* ChildImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61DC21C7D1AB00728826 /* ChildImageViewController.swift */; };
+		811B61DF21C7D54800728826 /* ChildTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61DE21C7D54800728826 /* ChildTextViewController.swift */; };
 		8157D29821BF9B99007C98ED /* WM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8157D29721BF9B99007C98ED /* WM.storyboard */; };
 		8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */; };
 		8157D29D21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */; };
@@ -35,6 +39,10 @@
 /* Begin PBXFileReference section */
 		811B61D321C7470C00728826 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		811B61D521C7833900728826 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		811B61D821C7C4E500728826 /* ChildListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildListViewController.swift; sourceTree = "<group>"; };
+		811B61DA21C7CDC400728826 /* ChildVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChildVC.storyboard; sourceTree = "<group>"; };
+		811B61DC21C7D1AB00728826 /* ChildImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildImageViewController.swift; sourceTree = "<group>"; };
+		811B61DE21C7D54800728826 /* ChildTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTextViewController.swift; sourceTree = "<group>"; };
 		8157D29721BF9B99007C98ED /* WM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WM.storyboard; sourceTree = "<group>"; };
 		8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenTextViewController.swift; sourceTree = "<group>"; };
 		8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenLeftImageViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +88,16 @@
 			path = demoView;
 			sourceTree = "<group>";
 		};
+		811B61D721C7C4B200728826 /* demoChildVC */ = {
+			isa = PBXGroup;
+			children = (
+				811B61D821C7C4E500728826 /* ChildListViewController.swift */,
+				811B61DC21C7D1AB00728826 /* ChildImageViewController.swift */,
+				811B61DE21C7D54800728826 /* ChildTextViewController.swift */,
+			);
+			path = demoChildVC;
+			sourceTree = "<group>";
+		};
 		8157D29921BF9C37007C98ED /* demoVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,9 +139,11 @@
 				81E7F61321BA1F63008C5E76 /* CustomViewController.swift */,
 				81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */,
 				8157D29921BF9C37007C98ED /* demoVC */,
+				811B61D721C7C4B200728826 /* demoChildVC */,
 				811B61D221C746E300728826 /* demoView */,
 				8168852021B92E8F001564EA /* Main.storyboard */,
 				8157D29721BF9B99007C98ED /* WM.storyboard */,
+				811B61DA21C7CDC400728826 /* ChildVC.storyboard */,
 				8168852321B92E91001564EA /* Assets.xcassets */,
 				8168852521B92E91001564EA /* LaunchScreen.storyboard */,
 				8168852821B92E91001564EA /* Info.plist */,
@@ -203,6 +223,7 @@
 				8157D29821BF9B99007C98ED /* WM.storyboard in Resources */,
 				8168852721B92E91001564EA /* LaunchScreen.storyboard in Resources */,
 				8168852421B92E91001564EA /* Assets.xcassets in Resources */,
+				811B61DB21C7CDC400728826 /* ChildVC.storyboard in Resources */,
 				8168852221B92E8F001564EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +239,7 @@
 				8168851F21B92E8F001564EA /* ViewController.swift in Sources */,
 				8168853221B9308D001564EA /* MenusView.swift in Sources */,
 				8157D29D21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift in Sources */,
+				811B61DF21C7D54800728826 /* ChildTextViewController.swift in Sources */,
 				81E7F61A21BA47A2008C5E76 /* Menu.swift in Sources */,
 				8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */,
 				8157D2A521BF9CDD007C98ED /* FixWidthRightImageViewController.swift in Sources */,
@@ -225,9 +247,11 @@
 				811B61D421C7470D00728826 /* ListView.swift in Sources */,
 				8168853421B930F7001564EA /* SliderViewModel.swift in Sources */,
 				8157D29F21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift in Sources */,
+				811B61D921C7C4E500728826 /* ChildListViewController.swift in Sources */,
 				8157D2A321BF9CCD007C98ED /* FixWidthLeftImageViewController.swift in Sources */,
 				811B61D621C7833900728826 /* CustomImageView.swift in Sources */,
 				8157D2A721BF9D1F007C98ED /* AutoWidthTextViewController.swift in Sources */,
+				811B61DD21C7D1AB00728826 /* ChildImageViewController.swift in Sources */,
 				81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */,
 				81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */,
 				8168853021B93073001564EA /* ScrollMenuViewController.swift in Sources */,
