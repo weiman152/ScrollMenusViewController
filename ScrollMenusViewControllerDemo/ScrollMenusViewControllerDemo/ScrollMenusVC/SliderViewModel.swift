@@ -68,10 +68,8 @@ extension SliderViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BlankCell", for: indexPath)
         let vc = childVCs[indexPath.row]
-        if !cell.subviews.contains(vc.view) {
-            cell.addSubview(vc.view)
-            vc.view.frame = cell.bounds
-        }
+        cell.addSubview(vc.view)
+        vc.view.frame = cell.bounds
         dataSource?.menu(viewController: vc, index: indexPath.row)
         return cell
     }

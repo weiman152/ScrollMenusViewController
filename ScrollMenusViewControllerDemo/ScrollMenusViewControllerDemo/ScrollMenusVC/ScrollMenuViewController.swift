@@ -53,6 +53,11 @@ public class ScrollMenuViewController: UIViewController {
     
     public weak var delegate: ScrollMenuViewControllerDelegate?
     public weak var dataSource: ScrollMenuViewControllerDataSource?
+    public var menuBackgroundColor: UIColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1) {
+        didSet {
+            menuView.set(backgroundColor: menuBackgroundColor)
+        }
+    }
 
     // 默认平分屏幕
     private var type: ScrollMenuType = .splitTheScreen
@@ -77,12 +82,10 @@ public class ScrollMenuViewController: UIViewController {
     }
     
     /// 创建滑动VC
-    open class func instance(
-        type: ScrollMenuType,
-        titleType: ScrollMenuTitleType,
-        superVC: UIViewController,
-        frame: CGRect = UIScreen.main.bounds
-        ) -> ScrollMenuViewController {
+    open class func instance( type: ScrollMenuType,
+                              titleType: ScrollMenuTitleType,
+                              superVC: UIViewController,
+                              frame: CGRect) -> ScrollMenuViewController {
         
         let vc = ScrollMenuViewController()
         vc.type = type
@@ -94,6 +97,15 @@ public class ScrollMenuViewController: UIViewController {
     }
 }
 
+// MARK: - public
+extension ScrollMenuViewController {
+    
+    public func set(menuBg color: UIColor, index: Int) {
+        menuView.set(menu: color, at: index)
+    }
+}
+
+// MARK: - private
 extension ScrollMenuViewController {
     
     private func setupMenus() {
@@ -175,6 +187,7 @@ extension ScrollMenuViewController {
     }
 }
 
+// MARK: - delegates
 extension ScrollMenuViewController: SliderViewModelDelegate {
     
     func addChildVC(vc: UIViewController) {

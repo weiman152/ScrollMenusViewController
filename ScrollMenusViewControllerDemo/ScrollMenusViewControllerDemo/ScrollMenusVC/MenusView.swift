@@ -42,7 +42,6 @@ class MenusView: UIView {
     private func setup() {
         addSubview(scrollView)
         addSubview(line)
-        backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     }
     
     private func setupLayout() {
@@ -72,6 +71,18 @@ extension MenusView {
     
     func getMenus() -> [Menu] {
         return menus
+    }
+    
+    func set(backgroundColor: UIColor) {
+        self.backgroundColor = backgroundColor
+    }
+    
+    func set(menu bgColor: UIColor, at index: Int) {
+        guard index < menus.count else {
+            return
+        }
+        let theMenu = menus[index]
+        theMenu.backgroundColor = bgColor
     }
     
 }
@@ -237,17 +248,5 @@ extension MenusView: MenuDelegate {
         return scrollView.contentSize
     }
 }
-
-//extension UIColor {
-//    //返回随机颜色
-//    class var randomColor: UIColor {
-//     get {
-//       let red = CGFloat(arc4random()%256)/255.0
-//       let green = CGFloat(arc4random()%256)/255.0
-//       let blue = CGFloat(arc4random()%256)/255.0
-//       return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-//     }
-//   }
-//}
 
 

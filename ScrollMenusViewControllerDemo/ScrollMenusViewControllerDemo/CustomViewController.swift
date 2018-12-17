@@ -28,6 +28,8 @@ class CustomViewController: UIViewController {
         )
         menuView.addSubview(menuVC.view)
         menuVC.dataSource = self
+        menuVC.set(menuBg: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), index: 0)
+        menuVC.set(menuBg: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1), index: 1)
     }
 
     static func instance() -> CustomViewController {
