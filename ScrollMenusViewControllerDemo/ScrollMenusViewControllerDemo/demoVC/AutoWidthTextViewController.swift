@@ -29,6 +29,7 @@ class AutoWidthTextViewController: UIViewController {
                           height: view.bounds.size.height - 84)
         )
         view.addSubview(scrollVC.view)
+        scrollVC.dataSource = self
     }
 
     static func instance() -> AutoWidthTextViewController {
@@ -41,4 +42,24 @@ class AutoWidthTextViewController: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+extension AutoWidthTextViewController: ScrollMenuViewControllerDataSource {
+    
+    func menu(viewController: UIViewController, index: Int) {
+        var vc = UIViewController()
+        switch index % 3 {
+        case 0:
+            vc = ChildListViewController.instance(index: index)
+        case 1:
+            vc = ChildImageViewController.instance(index: index)
+        case 2:
+            vc = ChildTextViewController.instance(index: index)
+        default: break
+        }
+        
+        viewController.addChildViewController(vc)
+        viewController.view.addSubview(vc.view)
+        vc.view.frame = viewController.view.bounds
+    }
 }

@@ -15,7 +15,7 @@ class ChildTextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "诗经·柏舟"
+        titleLabel.text = "诗经·柏舟 \(index)"
         
     }
     
