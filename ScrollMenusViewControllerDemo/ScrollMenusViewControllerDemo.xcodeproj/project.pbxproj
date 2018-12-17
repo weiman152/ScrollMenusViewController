@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811B61D421C7470D00728826 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61D321C7470C00728826 /* ListView.swift */; };
+		811B61D621C7833900728826 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811B61D521C7833900728826 /* CustomImageView.swift */; };
 		8157D29821BF9B99007C98ED /* WM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8157D29721BF9B99007C98ED /* WM.storyboard */; };
 		8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */; };
 		8157D29D21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		811B61D321C7470C00728826 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		811B61D521C7833900728826 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		8157D29721BF9B99007C98ED /* WM.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WM.storyboard; sourceTree = "<group>"; };
 		8157D29A21BF9C7F007C98ED /* SplitScreenTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenTextViewController.swift; sourceTree = "<group>"; };
 		8157D29C21BF9C91007C98ED /* SplitScreenLeftImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitScreenLeftImageViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		811B61D221C746E300728826 /* demoView */ = {
+			isa = PBXGroup;
+			children = (
+				811B61D321C7470C00728826 /* ListView.swift */,
+				811B61D521C7833900728826 /* CustomImageView.swift */,
+			);
+			path = demoView;
+			sourceTree = "<group>";
+		};
 		8157D29921BF9C37007C98ED /* demoVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +121,7 @@
 				81E7F61321BA1F63008C5E76 /* CustomViewController.swift */,
 				81E7F61721BA23E9008C5E76 /* ScrollViewController.swift */,
 				8157D29921BF9C37007C98ED /* demoVC */,
+				811B61D221C746E300728826 /* demoView */,
 				8168852021B92E8F001564EA /* Main.storyboard */,
 				8157D29721BF9B99007C98ED /* WM.storyboard */,
 				8168852321B92E91001564EA /* Assets.xcassets */,
@@ -208,9 +222,11 @@
 				8157D29B21BF9C7F007C98ED /* SplitScreenTextViewController.swift in Sources */,
 				8157D2A521BF9CDD007C98ED /* FixWidthRightImageViewController.swift in Sources */,
 				8157D2A921BF9D31007C98ED /* AutoWidthLeftImageViewController.swift in Sources */,
+				811B61D421C7470D00728826 /* ListView.swift in Sources */,
 				8168853421B930F7001564EA /* SliderViewModel.swift in Sources */,
 				8157D29F21BF9CA1007C98ED /* SplitScreenRightImageViewController.swift in Sources */,
 				8157D2A321BF9CCD007C98ED /* FixWidthLeftImageViewController.swift in Sources */,
+				811B61D621C7833900728826 /* CustomImageView.swift in Sources */,
 				8157D2A721BF9D1F007C98ED /* AutoWidthTextViewController.swift in Sources */,
 				81E7F61821BA23E9008C5E76 /* ScrollViewController.swift in Sources */,
 				81E7F61421BA1F63008C5E76 /* CustomViewController.swift in Sources */,

@@ -21,6 +21,10 @@ class MenusView: UIView {
     
     private var scrollView = UIScrollView()
     private var menus: [Menu] = []
+    private var line: UIView = {
+        $0.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        return $0
+    }( UIView() )
     private var currentIndex = 0
     
     override init(frame: CGRect) {
@@ -37,11 +41,16 @@ class MenusView: UIView {
     
     private func setup() {
         addSubview(scrollView)
-        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        addSubview(line)
+        backgroundColor = #colorLiteral(red: 0.968627451, green: 0.968627451, blue: 0.968627451, alpha: 1)
     }
     
     private func setupLayout() {
         scrollView.frame = bounds
+        line.frame = CGRect(x: 0,
+                            y: bounds.size.height - 1,
+                            width: bounds.size.width,
+                            height: 1)
     }
 }
 
@@ -153,7 +162,6 @@ extension MenusView {
             menu.delegate = self
             menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
-            menu.backgroundColor = UIColor.randomColor
         }
         scrollView.contentSize = CGSize(width: width * CGFloat(models.count),
                                         height: height)
@@ -185,7 +193,6 @@ extension MenusView {
             menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
             tempWidth += width
-            menu.backgroundColor = UIColor.randomColor
         }
         scrollView.contentSize = CGSize(width: tempWidth,
                                         height: height)
@@ -231,16 +238,16 @@ extension MenusView: MenuDelegate {
     }
 }
 
-extension UIColor {
-    //返回随机颜色
-    class var randomColor: UIColor {
-     get {
-       let red = CGFloat(arc4random()%256)/255.0
-       let green = CGFloat(arc4random()%256)/255.0
-       let blue = CGFloat(arc4random()%256)/255.0
-       return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-     }
-   }
-}
+//extension UIColor {
+//    //返回随机颜色
+//    class var randomColor: UIColor {
+//     get {
+//       let red = CGFloat(arc4random()%256)/255.0
+//       let green = CGFloat(arc4random()%256)/255.0
+//       let blue = CGFloat(arc4random()%256)/255.0
+//       return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+//     }
+//   }
+//}
 
 

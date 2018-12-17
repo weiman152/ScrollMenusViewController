@@ -11,6 +11,7 @@ import UIKit
 class CustomViewController: UIViewController {
 
     @IBOutlet weak var menuView: UIView!
+    private let menus = ["关注的人", "谁关注我"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,6 @@ class CustomViewController: UIViewController {
     }
     
     private func setup() {
-        let menus = ["关注的人", "谁关注我"]
         let menuVC = ScrollMenuViewController.instance(
             type: .splitTheScreen,
             titleType: .text(titles: menus),
@@ -27,6 +27,7 @@ class CustomViewController: UIViewController {
             frame: menuView.bounds
         )
         menuView.addSubview(menuVC.view)
+        menuVC.dataSource = self
     }
 
     static func instance() -> CustomViewController {
@@ -38,5 +39,19 @@ class CustomViewController: UIViewController {
     @IBAction func closeAction(_ sender: Any) {
         dismiss(animated: true)
     }
+}
+
+extension CustomViewController: ScrollMenuViewControllerDataSource {
     
+    func menu(viewController: UIViewController, index: Int) {
+        if index % 2 == 0 {
+            let view = ListView(frame: viewController.view.bounds)
+            view.set(title: menus[index])
+            viewController.view.addSubview(view)
+        } else {
+            let view = CustomImageView.init(frame: viewController.view.bounds)
+            view.set(title: menus[index])
+            viewController.view.addSubview(view)
+        }
+    }
 }

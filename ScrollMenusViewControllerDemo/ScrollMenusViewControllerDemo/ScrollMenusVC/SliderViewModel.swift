@@ -41,7 +41,6 @@ class SliderViewModel: NSObject {
         childVCs.removeAll()
         for i in 1...count {
             let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.randomColor
             vc.view.tag = i
             childVCs.append(vc)
             delegate?.addChildVC(vc: vc)
@@ -69,11 +68,11 @@ extension SliderViewModel: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BlankCell", for: indexPath)
         let vc = childVCs[indexPath.row]
-        dataSource?.menu(viewController: vc, index: indexPath.row)
         if !cell.subviews.contains(vc.view) {
             cell.addSubview(vc.view)
             vc.view.frame = cell.bounds
         }
+        dataSource?.menu(viewController: vc, index: indexPath.row)
         return cell
     }
 }
