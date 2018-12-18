@@ -145,24 +145,7 @@ extension ScrollMenuViewController {
         }
     }
     
-    private func fixWidthScroll(width: CGFloat, offsetX: CGFloat) {
-        guard let collection = collections else {
-            return
-        }
-        //1. 获取屏幕中间的位置
-        let centerX = menuView.center.x
-        //2. 找出不用滑动的菜单索引
-        let fixIndex = centerX / width
-        //3. 找到当前选中的菜单索引
-        let index = offsetX / collection.bounds.size.width
-        
-        //4. 计算scrollview滑动的偏移量并滑动
-        if (index > fixIndex)&&((childVCs.count - Int(index)) > Int(fixIndex)) {
-            menuView.scrollTo(index: Int(index))
-        }
-    }
-    
-    private func autoWidthScroll(offsetX: CGFloat) {
+    private func menuAutoScroll(offsetX: CGFloat) {
         guard let collection = collections else {
             return
         }
@@ -202,10 +185,10 @@ extension ScrollMenuViewController: SliderViewModelDelegate {
     func menuDidScroll(offSetX: CGFloat) {
         switch type {
         case .splitTheScreen: break
-        case .fixWidth(let width):
-            fixWidthScroll(width: width, offsetX: offSetX)
+        case .fixWidth:
+            menuAutoScroll(offsetX: offSetX)
         case .autoWidth:
-            autoWidthScroll(offsetX: offSetX)
+            menuAutoScroll(offsetX: offSetX)
         }
     }
 }

@@ -35,6 +35,7 @@ class SplitScreenLeftImageViewController: UIViewController {
             superVC: self,
             frame: frame)
         view.addSubview(scrollVC.view)
+        scrollVC.dataSource = self
     }
     
     static func instance() -> SplitScreenLeftImageViewController {
@@ -47,4 +48,24 @@ class SplitScreenLeftImageViewController: UIViewController {
         dismiss(animated: true)
     }
 
+}
+
+extension SplitScreenLeftImageViewController: ScrollMenuViewControllerDataSource {
+    
+    func menu(viewController: UIViewController, index: Int) {
+        var vc = UIViewController()
+        switch index % 3 {
+        case 0:
+            vc = ChildListViewController.instance(index: index)
+        case 1:
+            vc = ChildImageViewController.instance(index: index)
+        case 2:
+            vc = ChildTextViewController.instance(index: index)
+        default: break
+        }
+        
+        viewController.addChildViewController(vc)
+        viewController.view.addSubview(vc.view)
+        vc.view.frame = viewController.view.bounds
+    }
 }
