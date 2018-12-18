@@ -8,30 +8,30 @@ https://github.com/weiman152/ScrollMenusView
 
 效果图：<br>
 
-![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png) <br>
+![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
 
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a2.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a3.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a4.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a5.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a6.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a7.png)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a8.gif)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a9.gif)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a10.gif)
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a11.gif)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a13.gif)
-<br>
+
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/gif.gif)
 
 
