@@ -8,42 +8,29 @@ https://github.com/weiman152/ScrollMenusView
 
 效果图：<br>
 
-<br>
-![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
+![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png) <br>
 
-<br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a2.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a3.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a4.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a5.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a6.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a7.png)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a8.gif)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a9.gif)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a10.gif)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a11.gif)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a13.gif)
-
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/gif.gif)
 
@@ -53,10 +40,14 @@ https://github.com/weiman152/ScrollMenusView
 
 //
 //  SplitScreenTextViewController.swift
+
 //  ScrollMenusViewControllerDemo
+
 //
 //  Created by iOS on 2018/12/11.
+
 //  Copyright © 2018 weiman. All rights reserved.
+
 //
 
 import UIKit
