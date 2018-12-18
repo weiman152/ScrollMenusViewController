@@ -16,7 +16,7 @@ protocol MenuDelegate: NSObjectProtocol {
 class Menu: UIView {
 
     weak var delegate:MenuDelegate?
-    var index: Int = 0
+    var index: Int = -1
     
     private lazy var contentView = UIView()
     private lazy var titleLabel: UILabel = {
@@ -25,7 +25,10 @@ class Menu: UIView {
         $0.font = font
         return $0
     }( UILabel() )
-    private lazy var imageView: UIImageView = {
+    private lazy var imageNormal: UIImageView = {
+        return $0
+    }( UIImageView() )
+    private lazy var imageSelected: UIImageView = {
         return $0
     }( UIImageView() )
     
@@ -55,7 +58,8 @@ class Menu: UIView {
     private func setup() {
         addSubview(contentView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(imageView)
+        contentView.addSubview(imageNormal)
+        contentView.addSubview(imageSelected)
         
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(menuClick))
@@ -85,33 +89,37 @@ class Menu: UIView {
             titleWidth = menuWidth - imageWidth - spacing
         }
         let contentWidth = imageWidth + spacing + titleWidth
-        let centerY = (bounds.size.height - menuHeight) / 2.0
         
         switch type {
         case .text: // 纯文本
-            imageView.removeFromSuperview()
+            imageNormal.removeFromSuperview()
+            imageSelected.removeFromSuperview()
             titleLabel.frame = CGRect(x: 0,
-                                      y: centerY,
+                                      y: 0,
                                       width: titleWidth,
                                       height: menuHeight)
         case .leftImage: // 左图右文
-            imageView.frame = CGRect(x: 0,
-                                     y: centerY,
+            let imageY = (menuHeight - imageHeight) / 2.0
+            imageNormal.frame = CGRect(x: 0,
+                                     y: imageY,
                                      width: imageWidth,
                                      height: imageHeight)
+            imageSelected.frame = imageNormal.frame
             titleLabel.frame = CGRect(x: imageWidth + spacing,
-                                      y: centerY,
+                                      y: 0,
                                       width: titleWidth,
                                       height: menuHeight)
         case .rightImage: // 左文右图
+            let imageY = (menuHeight - imageHeight) / 2.0
             titleLabel.frame = CGRect(x: 0,
-                                      y: centerY,
+                                      y: 0,
                                       width: titleWidth,
                                       height: menuHeight)
-            imageView.frame = CGRect(x: titleWidth + spacing,
-                                     y: centerY,
+            imageNormal.frame = CGRect(x: titleWidth + spacing,
+                                     y: imageY,
                                      width: imageWidth,
                                      height: imageHeight)
+            imageSelected.frame = imageNormal.frame
         }
         
         contentView.frame = CGRect(x: (bounds.size.width - contentWidth) / 2.0,
@@ -129,6 +137,11 @@ extension Menu {
         setupLayout()
     }
     
+    func set(selected: Bool) {
+        imageNormal.isHidden = selected
+        imageSelected.isHidden = !selected
+    }
+    
     func set(color: UIColor) {
         titleLabel.textColor = color
     }
@@ -143,8 +156,17 @@ extension Menu {
         setupLayout()
     }
     
-    func set(image: UIImage) {
-        imageView.image = image
+    func set(normal image: UIImage) {
+        contentView.addSubview(imageNormal)
+        imageNormal.image = image
+        imageSize = image.size
+        setupLayout()
+    }
+    
+    func set(select image: UIImage) {
+        contentView.addSubview(imageSelected)
+        imageSelected.image = image
+        imageSize = image.size
         setupLayout()
     }
     

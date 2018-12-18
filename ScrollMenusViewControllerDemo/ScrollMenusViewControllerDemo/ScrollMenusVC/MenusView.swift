@@ -99,15 +99,15 @@ extension MenusView {
                 let model = MenuMode(title: title)
                 models.append(model)
             }
-            addMenus(models: models, width: width)
+            addMenus(models: models, width: width, type: titleType)
             
         case .leftImage(let menus):
             let width = bounds.size.width / CGFloat(menus.count)
-            addMenus(models: menus, width: width)
+            addMenus(models: menus, width: width, type: titleType)
             
         case .rightImage(let menus):
             let width = bounds.size.width / CGFloat(menus.count)
-            addMenus(models: menus, width: width)
+            addMenus(models: menus, width: width, type: titleType)
         }
     }
     
@@ -120,13 +120,13 @@ extension MenusView {
                 let menu = MenuMode(title: title)
                 models.append(menu)
             }
-            addMenus(models: models, width: width)
+            addMenus(models: models, width: width, type: titleType)
             
         case .leftImage(let menus):
-            addMenus(models: menus, width: width)
+            addMenus(models: menus, width: width, type: titleType)
             
         case .rightImage(let menus):
-            addMenus(models: menus, width: width)
+            addMenus(models: menus, width: width, type: titleType)
         }
     }
     
@@ -148,7 +148,7 @@ extension MenusView {
         }
     }
     
-    private func addMenus(models: [MenuMode], width: CGFloat) {
+    private func addMenus(models: [MenuMode], width: CGFloat, type: ScrollMenuTitleType) {
         
         menus.removeAll()
         scrollView.subviews.forEach { $0.removeFromSuperview() }
@@ -161,17 +161,19 @@ extension MenusView {
                 width: width,
                 height: height)
             )
+            menu.set(type: type)
             menu.index = i
             menu.set(title: model.title)
             if let image = model.normalImage {
-                menu.set(image: image)
+                menu.set(normal: image)
             }
-            if let image = model.selectedImage, i == currentIndex {
-                menu.set(image: image)
+            if let image = model.selectedImage {
+                menu.set(select: image)
             }
+            menu.set(selected: i == currentIndex)
+            menu.set(color: i == 0 ? selectColor : normalColor)
             menus.append(menu)
             menu.delegate = self
-            menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
         }
         scrollView.contentSize = CGSize(width: width * CGFloat(models.count),
@@ -194,14 +196,15 @@ extension MenusView {
                                 height: height)
             menu.set(title: model.title)
             if let image = model.normalImage {
-                menu.set(image: image)
+                menu.set(normal: image)
             }
-            if let image = model.selectedImage, i == currentIndex {
-                menu.set(image: image)
+            if let image = model.selectedImage {
+                menu.set(select: image)
             }
+            menu.set(selected: i == currentIndex)
+            menu.set(color: i == 0 ? selectColor : normalColor)
             menus.append(menu)
             menu.delegate = self
-            menu.set(color: i == 0 ? selectColor : normalColor)
             scrollView.addSubview(menu)
             tempWidth += width
         }
@@ -216,6 +219,7 @@ extension MenusView: MenuDelegate {
         
         for menu in menus {
             menu.set(color: menu.index == index ? selectColor : normalColor)
+            menu.set(selected: menu.index == index)
         }
         delegate?.menuClick(index: index)
     }
