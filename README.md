@@ -9,7 +9,7 @@ https://github.com/weiman152/ScrollMenusView
 效果图：<br>
 
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
+![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
 
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a2.png)
