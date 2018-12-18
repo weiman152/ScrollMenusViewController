@@ -34,6 +34,8 @@ class Menu: UIView {
     
     // 默认左图右文
     private var type: ScrollMenuTitleType = .text(titles: [])
+    // 是否是根据文字自适应宽度(因为计算frame不同)
+    private var isAuto = false
     private var imageSize: CGSize?
     private var font = UIFont.systemFont(ofSize: 16) {
         didSet {
@@ -42,6 +44,8 @@ class Menu: UIView {
     }
     // 图片和文字之间的距离
     private var spacing: CGFloat = 5
+    private let leftSpacing: CGFloat = 10
+    private let rightSpacing: CGFloat = 10
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,8 +77,13 @@ class Menu: UIView {
         var imageWidth: CGFloat = 0
         var imageHeight: CGFloat = 0
         if let imageSize = imageSize {
+            spacing = 5.0
             imageHeight = imageSize.height < menuHeight ? imageSize.height : menuHeight
-            imageWidth = imageSize.width < menuWidth ? imageSize.width : menuWidth
+            if isAuto {
+                imageWidth = imageSize.width
+            } else {
+                imageWidth = imageSize.width < menuWidth ? imageSize.width : menuWidth
+            }
         } else {
             spacing = 0
         }
@@ -85,8 +94,10 @@ class Menu: UIView {
             maxSize: CGSize(width: menuWidth, height: CGFloat(MAXFLOAT))
         )
         var titleWidth = titleSize.width
-        if titleWidth > (menuWidth - imageWidth - spacing) {
-            titleWidth = menuWidth - imageWidth - spacing
+        if isAuto == false {
+            if titleWidth > (menuWidth - imageWidth - spacing) {
+                titleWidth = menuWidth - imageWidth - spacing
+            }
         }
         let contentWidth = imageWidth + spacing + titleWidth
         
@@ -132,9 +143,9 @@ class Menu: UIView {
 // MARK: - public
 extension Menu {
     
-    func set(type: ScrollMenuTitleType) {
+    func set(type: ScrollMenuTitleType, isAuto: Bool) {
         self.type = type
-        setupLayout()
+        self.isAuto = isAuto
     }
     
     func set(selected: Bool) {
@@ -148,31 +159,26 @@ extension Menu {
     
     func set(font: UIFont) {
         self.font = font
-        setupLayout()
     }
     
     func set(title: String) {
         titleLabel.text = title
-        setupLayout()
     }
     
     func set(normal image: UIImage) {
         contentView.addSubview(imageNormal)
         imageNormal.image = image
         imageSize = image.size
-        setupLayout()
     }
     
     func set(select image: UIImage) {
         contentView.addSubview(imageSelected)
         imageSelected.image = image
         imageSize = image.size
-        setupLayout()
     }
     
     func set(imageSize: CGSize) {
         self.imageSize = imageSize
-        setupLayout()
     }
     
     /// 对于自适应宽度的菜单，根据内容获取菜单宽度
@@ -181,11 +187,15 @@ extension Menu {
     /// - title: 菜单显示文字
     /// - Returns: 菜单宽度
     func getWidth(title: String,
-                  imageSize: CGSize = CGSize(width: 20, height: 20)) -> CGFloat {
+                  imageSize: CGSize = CGSize(width: 0, height: 0)) -> CGFloat {
         let maxSize = CGSize(width: CGFloat(MAXFLOAT), height: CGFloat(MAXFLOAT))
         let titleSize = textSize(text: title, font: font, maxSize: maxSize)
-        let width = titleSize.width + spacing + imageSize.width
+        let width = titleSize.width + spacing + imageSize.width + leftSpacing + rightSpacing
         return width
+    }
+    
+    func updateFrame() {
+        setupLayout()
     }
 }
 

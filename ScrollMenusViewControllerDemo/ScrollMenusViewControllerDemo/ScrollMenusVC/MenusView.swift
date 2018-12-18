@@ -139,12 +139,13 @@ extension MenusView {
                 let menu = MenuMode(title: title)
                 models.append(menu)
             }
-            addMenus(models: models)
+            addMenus(models: models, type: titleType)
+            
         case .leftImage(let menus):
-            addMenus(models: menus)
+            addMenus(models: menus, type: titleType)
             
         case .rightImage(let menus):
-            addMenus(models: menus)
+            addMenus(models: menus, type: titleType)
         }
     }
     
@@ -161,7 +162,7 @@ extension MenusView {
                 width: width,
                 height: height)
             )
-            menu.set(type: type)
+            menu.set(type: type, isAuto: false)
             menu.index = i
             menu.set(title: model.title)
             if let image = model.normalImage {
@@ -172,6 +173,7 @@ extension MenusView {
             }
             menu.set(selected: i == currentIndex)
             menu.set(color: i == 0 ? selectColor : normalColor)
+            menu.updateFrame()
             menus.append(menu)
             menu.delegate = self
             scrollView.addSubview(menu)
@@ -180,7 +182,7 @@ extension MenusView {
                                         height: height)
     }
     
-    private func addMenus(models: [MenuMode]) {
+    private func addMenus(models: [MenuMode], type: ScrollMenuTitleType) {
         
         menus.removeAll()
         scrollView.subviews.forEach { $0.removeFromSuperview() }
@@ -188,21 +190,30 @@ extension MenusView {
         var tempWidth:CGFloat = 0
         for (i, model) in models.enumerated() {
             let menu = Menu(frame: .zero)
+            menu.set(type: type, isAuto: true)
+            var width = menu.getWidth(title: model.title)
             menu.index = i
-            let width = menu.getWidth(title: model.title)
-            menu.frame = CGRect(x: tempWidth,
-                                y: 0,
-                                width: width,
-                                height: height)
             menu.set(title: model.title)
             if let image = model.normalImage {
                 menu.set(normal: image)
+                width = menu.getWidth(title: model.title,
+                                      imageSize: image.size)
             }
             if let image = model.selectedImage {
                 menu.set(select: image)
+                if image.size.width > width {
+                    width = menu.getWidth(title: model.title,
+                                          imageSize: image.size)
+                }
             }
             menu.set(selected: i == currentIndex)
             menu.set(color: i == 0 ? selectColor : normalColor)
+            let frame = CGRect(x: tempWidth,
+                               y: 0,
+                               width: width,
+                               height: height)
+            menu.frame = frame
+            menu.updateFrame()
             menus.append(menu)
             menu.delegate = self
             scrollView.addSubview(menu)
