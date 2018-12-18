@@ -7,7 +7,7 @@ swift4 滑动菜单，每一个被滑动的页面都是一个VC。
 https://github.com/weiman152/ScrollMenusView
 
 效果图：<br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/QQ20181218-164046.mp4)
+
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
 <br>
@@ -23,15 +23,17 @@ https://github.com/weiman152/ScrollMenusView
 <br>
 ![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a7.png)
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a8.png)
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a8.gif)
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a9.png)
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a9.gif)
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a10.png)
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a10.gif)
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a11.png)
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a11.gif)
 <br>
-![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a13.png)
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a13.gif)
+<br>
+![Alt Text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/gif.gif)
 
 <br><br>
 使用示例：
