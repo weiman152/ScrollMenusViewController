@@ -6,6 +6,16 @@ swift4 滑动菜单，每一个被滑动的页面都是一个VC。
 
 https://github.com/weiman152/ScrollMenusView
 
+支持cocoa pods
+
+platform :ios, '9.0' inhibit_all_warnings!
+
+target '你的项目名字' do use_frameworks!
+
+pod ScrollMenusViewController
+
+end
+
 效果图：<br>
 
 ![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
