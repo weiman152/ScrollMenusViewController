@@ -16,6 +16,11 @@ pod ScrollMenusViewController
 
 end
 
+如果想了解实现思路，请参考：
+https://www.jianshu.com/p/6be966481899
+以及
+https://www.jianshu.com/p/3ef5575fb6f7
+
 效果图：<br>
 
 ![Alt text](https://github.com/weiman152/ScrollMenusViewController/blob/master/screenshot/a1.png)
